@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# Vivado v2014.2 (64-bit)
+# SW Build 932637 on Wed Jun 11 13:33:10 MDT 2014
+# IP Build 924643 on Fri May 30 09:20:16 MDT 2014
+# Start of session at: Sun Nov 24 01:57:04 2024
+# Process ID: 10044
+# Log file: C:/Users/fakhr/OneDrive/Documents/Vivado/heart-rate-monitor/heart-rate-monitor.runs/impl_1/heart_rate_monitor.vdi
+# Journal file: C:/Users/fakhr/OneDrive/Documents/Vivado/heart-rate-monitor/heart-rate-monitor.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source heart_rate_monitor.tcl -notrace

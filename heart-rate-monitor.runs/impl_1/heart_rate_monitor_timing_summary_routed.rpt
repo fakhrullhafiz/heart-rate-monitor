@@ -1,0 +1,1219 @@
+Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2014.2 (win64) Build 932637 Wed Jun 11 13:33:10 MDT 2014
+| Date         : Sun Nov 24 01:57:51 2024
+| Host         : ACER-NITRO5 running 64-bit major release  (build 9200)
+| Command      : report_timing_summary -warn_on_violation -file heart_rate_monitor_timing_summary_routed.rpt -pb heart_rate_monitor_timing_summary_routed.pb
+| Design       : heart_rate_monitor
+| Device       : 7a100t-csg324
+| Speed File   : -1  PRODUCTION 1.12 2014-03-13
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock
+2. checking constant clock
+3. checking pulse_width_clock
+4. checking unconstrained_internal_endpoints
+5. checking no_input_delay
+6. checking no_output_delay
+7. checking multiple_clock
+8. checking generated_clocks
+9. checking loops
+10. checking partial_input_delay
+11. checking partial_output_delay
+12. checking unexpandable_clocks
+13. checking latch_loops
+
+1. checking no_clock
+--------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant clock
+--------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock
+-----------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints
+--------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay
+--------------------------
+ There are 13 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay
+---------------------------
+ There are 11 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but has a clock definition.
+
+
+7. checking multiple_clock
+--------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks
+----------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops
+-----------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay
+--------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay
+---------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking unexpandable_clocks
+--------------------------------
+ There are 0 unexpandable clock pairs.
+
+
+13. checking latch_loops
+------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+    -77.640     -542.563                      8                  137        0.177        0.000                      0                  137        4.500        0.000                       0                   110  
+
+
+Timing constraints are not met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock        Waveform(ns)       Period(ns)      Frequency(MHz)
+-----        ------------       ----------      --------------
+sys_clk_pin  {0.000 5.000}      10.000          100.000         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+sys_clk_pin       -77.640     -542.563                      8                  137        0.177        0.000                      0                  137        4.500        0.000                       0                   110  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  sys_clk_pin
+  To Clock:  sys_clk_pin
+
+Setup :            8  Failing Endpoints,  Worst Slack      -77.640ns,  Total Violation     -542.563ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.177ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        4.500ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (VIOLATED) :        -77.640ns  (required time - arrival time)
+  Source:                 u_bpm_calculator/beat_interval_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_bpm_calculator/bpm_reg[0]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        87.354ns  (logic 57.394ns (65.702%)  route 29.960ns (34.298%))
+  Logic Levels:           309  (CARRY4=279 LUT2=29 LUT3=1)
+  Clock Path Skew:        -0.296ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.698ns = ( 14.698 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.174ns
+    Clock Pessimism Removal (CPR):    0.180ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.780     3.262    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.358 r  clk_IBUF_BUFG_inst/O
+                         net (fo=109, routed)         1.815     5.174    u_bpm_calculator/CLK
+    SLICE_X29Y45                                                      r  u_bpm_calculator/beat_interval_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X29Y45         FDCE (Prop_fdce_C_Q)         0.456     5.630 r  u_bpm_calculator/beat_interval_reg[0]/Q
+                         net (fo=63, routed)          0.455     6.085    u_bpm_calculator/beat_interval[0]
+    SLICE_X28Y44         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.656     6.741 r  u_bpm_calculator/bpm_reg[7]_i_997/CO[3]
+                         net (fo=1, routed)           0.000     6.741    u_bpm_calculator/n_0_bpm_reg[7]_i_997
+    SLICE_X28Y45         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.855 r  u_bpm_calculator/bpm_reg[7]_i_992/CO[3]
+                         net (fo=1, routed)           0.000     6.855    u_bpm_calculator/n_0_bpm_reg[7]_i_992
+    SLICE_X28Y46         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.969 r  u_bpm_calculator/bpm_reg[7]_i_987/CO[3]
+                         net (fo=1, routed)           0.000     6.969    u_bpm_calculator/n_0_bpm_reg[7]_i_987
+    SLICE_X28Y47         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.083 r  u_bpm_calculator/bpm_reg[7]_i_982/CO[3]
+                         net (fo=1, routed)           0.000     7.083    u_bpm_calculator/n_0_bpm_reg[7]_i_982
+    SLICE_X28Y48         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.197 r  u_bpm_calculator/bpm_reg[7]_i_977/CO[3]
+                         net (fo=1, routed)           0.000     7.197    u_bpm_calculator/n_0_bpm_reg[7]_i_977
+    SLICE_X28Y49         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.311 r  u_bpm_calculator/bpm_reg[7]_i_972/CO[3]
+                         net (fo=1, routed)           0.001     7.311    u_bpm_calculator/n_0_bpm_reg[7]_i_972
+    SLICE_X28Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.425 r  u_bpm_calculator/bpm_reg[7]_i_967/CO[3]
+                         net (fo=1, routed)           0.000     7.425    u_bpm_calculator/n_0_bpm_reg[7]_i_967
+    SLICE_X28Y51         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.539 r  u_bpm_calculator/bpm_reg[7]_i_964/CO[3]
+                         net (fo=1, routed)           0.000     7.539    u_bpm_calculator/n_0_bpm_reg[7]_i_964
+    SLICE_X28Y52         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     7.810 r  u_bpm_calculator/bpm_reg[7]_i_963/CO[0]
+                         net (fo=36, routed)          0.932     8.742    u_bpm_calculator/CO[0]
+    SLICE_X30Y46         LUT2 (Prop_lut2_I0_O)        0.373     9.115 r  u_bpm_calculator/bpm[7]_i_1005/O
+                         net (fo=1, routed)           0.000     9.115    u_bpm_calculator/n_0_bpm[7]_i_1005
+    SLICE_X30Y46         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     9.648 r  u_bpm_calculator/bpm_reg[7]_i_954/CO[3]
+                         net (fo=1, routed)           0.000     9.648    u_bpm_calculator/n_0_bpm_reg[7]_i_954
+    SLICE_X30Y47         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.765 r  u_bpm_calculator/bpm_reg[7]_i_949/CO[3]
+                         net (fo=1, routed)           0.000     9.765    u_bpm_calculator/n_0_bpm_reg[7]_i_949
+    SLICE_X30Y48         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.882 r  u_bpm_calculator/bpm_reg[7]_i_944/CO[3]
+                         net (fo=1, routed)           0.000     9.882    u_bpm_calculator/n_0_bpm_reg[7]_i_944
+    SLICE_X30Y49         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.999 r  u_bpm_calculator/bpm_reg[7]_i_939/CO[3]
+                         net (fo=1, routed)           0.001    10.000    u_bpm_calculator/n_0_bpm_reg[7]_i_939
+    SLICE_X30Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    10.117 r  u_bpm_calculator/bpm_reg[7]_i_934/CO[3]
+                         net (fo=1, routed)           0.000    10.117    u_bpm_calculator/n_0_bpm_reg[7]_i_934
+    SLICE_X30Y51         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    10.234 r  u_bpm_calculator/bpm_reg[7]_i_929/CO[3]
+                         net (fo=1, routed)           0.000    10.234    u_bpm_calculator/n_0_bpm_reg[7]_i_929
+    SLICE_X30Y52         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    10.351 r  u_bpm_calculator/bpm_reg[7]_i_924/CO[3]
+                         net (fo=1, routed)           0.000    10.351    u_bpm_calculator/n_0_bpm_reg[7]_i_924
+    SLICE_X30Y53         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    10.468 r  u_bpm_calculator/bpm_reg[7]_i_921/CO[3]
+                         net (fo=1, routed)           0.000    10.468    u_bpm_calculator/n_0_bpm_reg[7]_i_921
+    SLICE_X30Y54         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    10.625 r  u_bpm_calculator/bpm_reg[7]_i_920/CO[1]
+                         net (fo=36, routed)          1.064    11.689    u_bpm_calculator/O1[0]
+    SLICE_X31Y48         LUT3 (Prop_lut3_I0_O)        0.332    12.021 r  u_bpm_calculator/bpm[7]_i_960/O
+                         net (fo=1, routed)           0.000    12.021    u_bpm_calculator/n_0_bpm[7]_i_960
+    SLICE_X31Y48         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401    12.422 r  u_bpm_calculator/bpm_reg[7]_i_911/CO[3]
+                         net (fo=1, routed)           0.000    12.422    u_bpm_calculator/n_0_bpm_reg[7]_i_911
+    SLICE_X31Y49         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    12.536 r  u_bpm_calculator/bpm_reg[7]_i_906/CO[3]
+                         net (fo=1, routed)           0.001    12.536    u_bpm_calculator/n_0_bpm_reg[7]_i_906
+    SLICE_X31Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    12.650 r  u_bpm_calculator/bpm_reg[7]_i_901/CO[3]
+                         net (fo=1, routed)           0.000    12.650    u_bpm_calculator/n_0_bpm_reg[7]_i_901
+    SLICE_X31Y51         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    12.764 r  u_bpm_calculator/bpm_reg[7]_i_896/CO[3]
+                         net (fo=1, routed)           0.000    12.764    u_bpm_calculator/n_0_bpm_reg[7]_i_896
+    SLICE_X31Y52         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    12.878 r  u_bpm_calculator/bpm_reg[7]_i_891/CO[3]
+                         net (fo=1, routed)           0.000    12.878    u_bpm_calculator/n_0_bpm_reg[7]_i_891
+    SLICE_X31Y53         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    12.992 r  u_bpm_calculator/bpm_reg[7]_i_886/CO[3]
+                         net (fo=1, routed)           0.000    12.992    u_bpm_calculator/n_0_bpm_reg[7]_i_886
+    SLICE_X31Y54         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    13.106 r  u_bpm_calculator/bpm_reg[7]_i_881/CO[3]
+                         net (fo=1, routed)           0.000    13.106    u_bpm_calculator/n_0_bpm_reg[7]_i_881
+    SLICE_X31Y55         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    13.220 r  u_bpm_calculator/bpm_reg[7]_i_878/CO[3]
+                         net (fo=1, routed)           0.000    13.220    u_bpm_calculator/n_0_bpm_reg[7]_i_878
+    SLICE_X31Y56         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    13.377 r  u_bpm_calculator/bpm_reg[7]_i_877/CO[1]
+                         net (fo=36, routed)          1.093    14.471    u_bpm_calculator/O3[0]
+    SLICE_X32Y48         LUT2 (Prop_lut2_I1_O)        0.329    14.800 r  u_bpm_calculator/bpm[7]_i_919/O
+                         net (fo=1, routed)           0.000    14.800    u_bpm_calculator/n_0_bpm[7]_i_919
+    SLICE_X32Y48         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    15.350 r  u_bpm_calculator/bpm_reg[7]_i_868/CO[3]
+                         net (fo=1, routed)           0.000    15.350    u_bpm_calculator/n_0_bpm_reg[7]_i_868
+    SLICE_X32Y49         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    15.464 r  u_bpm_calculator/bpm_reg[7]_i_863/CO[3]
+                         net (fo=1, routed)           0.001    15.464    u_bpm_calculator/n_0_bpm_reg[7]_i_863
+    SLICE_X32Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    15.578 r  u_bpm_calculator/bpm_reg[7]_i_858/CO[3]
+                         net (fo=1, routed)           0.000    15.578    u_bpm_calculator/n_0_bpm_reg[7]_i_858
+    SLICE_X32Y51         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    15.692 r  u_bpm_calculator/bpm_reg[7]_i_853/CO[3]
+                         net (fo=1, routed)           0.000    15.692    u_bpm_calculator/n_0_bpm_reg[7]_i_853
+    SLICE_X32Y52         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    15.806 r  u_bpm_calculator/bpm_reg[7]_i_848/CO[3]
+                         net (fo=1, routed)           0.000    15.806    u_bpm_calculator/n_0_bpm_reg[7]_i_848
+    SLICE_X32Y53         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    15.920 r  u_bpm_calculator/bpm_reg[7]_i_843/CO[3]
+                         net (fo=1, routed)           0.000    15.920    u_bpm_calculator/n_0_bpm_reg[7]_i_843
+    SLICE_X32Y54         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.034 r  u_bpm_calculator/bpm_reg[7]_i_838/CO[3]
+                         net (fo=1, routed)           0.000    16.034    u_bpm_calculator/n_0_bpm_reg[7]_i_838
+    SLICE_X32Y55         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.148 r  u_bpm_calculator/bpm_reg[7]_i_835/CO[3]
+                         net (fo=1, routed)           0.000    16.148    u_bpm_calculator/n_0_bpm_reg[7]_i_835
+    SLICE_X32Y56         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    16.305 r  u_bpm_calculator/bpm_reg[7]_i_834/CO[1]
+                         net (fo=36, routed)          0.883    17.189    u_bpm_calculator/O5[0]
+    SLICE_X33Y48         LUT2 (Prop_lut2_I0_O)        0.329    17.518 r  u_bpm_calculator/bpm[7]_i_876/O
+                         net (fo=1, routed)           0.000    17.518    u_bpm_calculator/n_0_bpm[7]_i_876
+    SLICE_X33Y48         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    18.068 r  u_bpm_calculator/bpm_reg[7]_i_825/CO[3]
+                         net (fo=1, routed)           0.000    18.068    u_bpm_calculator/n_0_bpm_reg[7]_i_825
+    SLICE_X33Y49         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    18.182 r  u_bpm_calculator/bpm_reg[7]_i_820/CO[3]
+                         net (fo=1, routed)           0.001    18.182    u_bpm_calculator/n_0_bpm_reg[7]_i_820
+    SLICE_X33Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    18.296 r  u_bpm_calculator/bpm_reg[7]_i_815/CO[3]
+                         net (fo=1, routed)           0.000    18.296    u_bpm_calculator/n_0_bpm_reg[7]_i_815
+    SLICE_X33Y51         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    18.410 r  u_bpm_calculator/bpm_reg[7]_i_810/CO[3]
+                         net (fo=1, routed)           0.000    18.410    u_bpm_calculator/n_0_bpm_reg[7]_i_810
+    SLICE_X33Y52         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    18.524 r  u_bpm_calculator/bpm_reg[7]_i_805/CO[3]
+                         net (fo=1, routed)           0.000    18.524    u_bpm_calculator/n_0_bpm_reg[7]_i_805
+    SLICE_X33Y53         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    18.638 r  u_bpm_calculator/bpm_reg[7]_i_800/CO[3]
+                         net (fo=1, routed)           0.000    18.638    u_bpm_calculator/n_0_bpm_reg[7]_i_800
+    SLICE_X33Y54         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    18.752 r  u_bpm_calculator/bpm_reg[7]_i_795/CO[3]
+                         net (fo=1, routed)           0.000    18.752    u_bpm_calculator/n_0_bpm_reg[7]_i_795
+    SLICE_X33Y55         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    18.866 r  u_bpm_calculator/bpm_reg[7]_i_792/CO[3]
+                         net (fo=1, routed)           0.000    18.866    u_bpm_calculator/n_0_bpm_reg[7]_i_792
+    SLICE_X33Y56         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    19.023 r  u_bpm_calculator/bpm_reg[7]_i_791/CO[1]
+                         net (fo=36, routed)          1.026    20.049    u_bpm_calculator/O7[0]
+    SLICE_X34Y48         LUT2 (Prop_lut2_I1_O)        0.329    20.378 r  u_bpm_calculator/bpm[7]_i_833/O
+                         net (fo=1, routed)           0.000    20.378    u_bpm_calculator/n_0_bpm[7]_i_833
+    SLICE_X34Y48         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533    20.911 r  u_bpm_calculator/bpm_reg[7]_i_782/CO[3]
+                         net (fo=1, routed)           0.000    20.911    u_bpm_calculator/n_0_bpm_reg[7]_i_782
+    SLICE_X34Y49         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    21.028 r  u_bpm_calculator/bpm_reg[7]_i_777/CO[3]
+                         net (fo=1, routed)           0.001    21.029    u_bpm_calculator/n_0_bpm_reg[7]_i_777
+    SLICE_X34Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    21.146 r  u_bpm_calculator/bpm_reg[7]_i_772/CO[3]
+                         net (fo=1, routed)           0.000    21.146    u_bpm_calculator/n_0_bpm_reg[7]_i_772
+    SLICE_X34Y51         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    21.263 r  u_bpm_calculator/bpm_reg[7]_i_767/CO[3]
+                         net (fo=1, routed)           0.000    21.263    u_bpm_calculator/n_0_bpm_reg[7]_i_767
+    SLICE_X34Y52         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    21.380 r  u_bpm_calculator/bpm_reg[7]_i_762/CO[3]
+                         net (fo=1, routed)           0.000    21.380    u_bpm_calculator/n_0_bpm_reg[7]_i_762
+    SLICE_X34Y53         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    21.497 r  u_bpm_calculator/bpm_reg[7]_i_757/CO[3]
+                         net (fo=1, routed)           0.000    21.497    u_bpm_calculator/n_0_bpm_reg[7]_i_757
+    SLICE_X34Y54         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    21.614 r  u_bpm_calculator/bpm_reg[7]_i_752/CO[3]
+                         net (fo=1, routed)           0.000    21.614    u_bpm_calculator/n_0_bpm_reg[7]_i_752
+    SLICE_X34Y55         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    21.731 r  u_bpm_calculator/bpm_reg[7]_i_749/CO[3]
+                         net (fo=1, routed)           0.000    21.731    u_bpm_calculator/n_0_bpm_reg[7]_i_749
+    SLICE_X34Y56         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    21.888 r  u_bpm_calculator/bpm_reg[7]_i_748/CO[1]
+                         net (fo=36, routed)          0.991    22.880    u_bpm_calculator/O9[0]
+    SLICE_X35Y49         LUT2 (Prop_lut2_I0_O)        0.332    23.212 r  u_bpm_calculator/bpm[7]_i_790/O
+                         net (fo=1, routed)           0.000    23.212    u_bpm_calculator/n_0_bpm[7]_i_790
+    SLICE_X35Y49         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    23.762 r  u_bpm_calculator/bpm_reg[7]_i_739/CO[3]
+                         net (fo=1, routed)           0.001    23.762    u_bpm_calculator/n_0_bpm_reg[7]_i_739
+    SLICE_X35Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    23.876 r  u_bpm_calculator/bpm_reg[7]_i_734/CO[3]
+                         net (fo=1, routed)           0.000    23.876    u_bpm_calculator/n_0_bpm_reg[7]_i_734
+    SLICE_X35Y51         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    23.990 r  u_bpm_calculator/bpm_reg[7]_i_729/CO[3]
+                         net (fo=1, routed)           0.000    23.990    u_bpm_calculator/n_0_bpm_reg[7]_i_729
+    SLICE_X35Y52         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    24.104 r  u_bpm_calculator/bpm_reg[7]_i_724/CO[3]
+                         net (fo=1, routed)           0.000    24.104    u_bpm_calculator/n_0_bpm_reg[7]_i_724
+    SLICE_X35Y53         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    24.218 r  u_bpm_calculator/bpm_reg[7]_i_719/CO[3]
+                         net (fo=1, routed)           0.000    24.218    u_bpm_calculator/n_0_bpm_reg[7]_i_719
+    SLICE_X35Y54         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    24.332 r  u_bpm_calculator/bpm_reg[7]_i_714/CO[3]
+                         net (fo=1, routed)           0.000    24.332    u_bpm_calculator/n_0_bpm_reg[7]_i_714
+    SLICE_X35Y55         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    24.446 r  u_bpm_calculator/bpm_reg[7]_i_709/CO[3]
+                         net (fo=1, routed)           0.000    24.446    u_bpm_calculator/n_0_bpm_reg[7]_i_709
+    SLICE_X35Y56         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    24.560 r  u_bpm_calculator/bpm_reg[7]_i_706/CO[3]
+                         net (fo=1, routed)           0.000    24.560    u_bpm_calculator/n_0_bpm_reg[7]_i_706
+    SLICE_X35Y57         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    24.717 r  u_bpm_calculator/bpm_reg[7]_i_705/CO[1]
+                         net (fo=36, routed)          0.939    25.657    u_bpm_calculator/O11[0]
+    SLICE_X36Y50         LUT2 (Prop_lut2_I0_O)        0.329    25.986 r  u_bpm_calculator/bpm[7]_i_747/O
+                         net (fo=1, routed)           0.000    25.986    u_bpm_calculator/n_0_bpm[7]_i_747
+    SLICE_X36Y50         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    26.536 r  u_bpm_calculator/bpm_reg[7]_i_696/CO[3]
+                         net (fo=1, routed)           0.000    26.536    u_bpm_calculator/n_0_bpm_reg[7]_i_696
+    SLICE_X36Y51         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    26.650 r  u_bpm_calculator/bpm_reg[7]_i_691/CO[3]
+                         net (fo=1, routed)           0.000    26.650    u_bpm_calculator/n_0_bpm_reg[7]_i_691
+    SLICE_X36Y52         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    26.764 r  u_bpm_calculator/bpm_reg[7]_i_686/CO[3]
+                         net (fo=1, routed)           0.000    26.764    u_bpm_calculator/n_0_bpm_reg[7]_i_686
+    SLICE_X36Y53         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    26.878 r  u_bpm_calculator/bpm_reg[7]_i_681/CO[3]
+                         net (fo=1, routed)           0.000    26.878    u_bpm_calculator/n_0_bpm_reg[7]_i_681
+    SLICE_X36Y54         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    26.992 r  u_bpm_calculator/bpm_reg[7]_i_676/CO[3]
+                         net (fo=1, routed)           0.000    26.992    u_bpm_calculator/n_0_bpm_reg[7]_i_676
+    SLICE_X36Y55         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    27.106 r  u_bpm_calculator/bpm_reg[7]_i_671/CO[3]
+                         net (fo=1, routed)           0.000    27.106    u_bpm_calculator/n_0_bpm_reg[7]_i_671
+    SLICE_X36Y56         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    27.220 r  u_bpm_calculator/bpm_reg[7]_i_666/CO[3]
+                         net (fo=1, routed)           0.000    27.220    u_bpm_calculator/n_0_bpm_reg[7]_i_666
+    SLICE_X36Y57         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    27.334 r  u_bpm_calculator/bpm_reg[7]_i_663/CO[3]
+                         net (fo=1, routed)           0.000    27.334    u_bpm_calculator/n_0_bpm_reg[7]_i_663
+    SLICE_X36Y58         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    27.491 r  u_bpm_calculator/bpm_reg[7]_i_662/CO[1]
+                         net (fo=36, routed)          0.984    28.475    u_bpm_calculator/O13[0]
+    SLICE_X37Y53         LUT2 (Prop_lut2_I1_O)        0.329    28.804 r  u_bpm_calculator/bpm[7]_i_704/O
+                         net (fo=1, routed)           0.000    28.804    u_bpm_calculator/n_0_bpm[7]_i_704
+    SLICE_X37Y53         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    29.354 r  u_bpm_calculator/bpm_reg[7]_i_653/CO[3]
+                         net (fo=1, routed)           0.000    29.354    u_bpm_calculator/n_0_bpm_reg[7]_i_653
+    SLICE_X37Y54         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    29.468 r  u_bpm_calculator/bpm_reg[7]_i_648/CO[3]
+                         net (fo=1, routed)           0.000    29.468    u_bpm_calculator/n_0_bpm_reg[7]_i_648
+    SLICE_X37Y55         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    29.582 r  u_bpm_calculator/bpm_reg[7]_i_643/CO[3]
+                         net (fo=1, routed)           0.000    29.582    u_bpm_calculator/n_0_bpm_reg[7]_i_643
+    SLICE_X37Y56         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    29.696 r  u_bpm_calculator/bpm_reg[7]_i_638/CO[3]
+                         net (fo=1, routed)           0.000    29.696    u_bpm_calculator/n_0_bpm_reg[7]_i_638
+    SLICE_X37Y57         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    29.810 r  u_bpm_calculator/bpm_reg[7]_i_633/CO[3]
+                         net (fo=1, routed)           0.000    29.810    u_bpm_calculator/n_0_bpm_reg[7]_i_633
+    SLICE_X37Y58         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    29.924 r  u_bpm_calculator/bpm_reg[7]_i_628/CO[3]
+                         net (fo=1, routed)           0.000    29.924    u_bpm_calculator/n_0_bpm_reg[7]_i_628
+    SLICE_X37Y59         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    30.038 r  u_bpm_calculator/bpm_reg[7]_i_623/CO[3]
+                         net (fo=1, routed)           0.000    30.038    u_bpm_calculator/n_0_bpm_reg[7]_i_623
+    SLICE_X37Y60         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    30.152 r  u_bpm_calculator/bpm_reg[7]_i_620/CO[3]
+                         net (fo=1, routed)           0.000    30.152    u_bpm_calculator/n_0_bpm_reg[7]_i_620
+    SLICE_X37Y61         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    30.309 r  u_bpm_calculator/bpm_reg[7]_i_619/CO[1]
+                         net (fo=36, routed)          1.336    31.645    u_bpm_calculator/O15[0]
+    SLICE_X37Y44         LUT2 (Prop_lut2_I0_O)        0.329    31.974 r  u_bpm_calculator/bpm[7]_i_661/O
+                         net (fo=1, routed)           0.000    31.974    u_bpm_calculator/n_0_bpm[7]_i_661
+    SLICE_X37Y44         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    32.524 r  u_bpm_calculator/bpm_reg[7]_i_610/CO[3]
+                         net (fo=1, routed)           0.000    32.524    u_bpm_calculator/n_0_bpm_reg[7]_i_610
+    SLICE_X37Y45         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    32.638 r  u_bpm_calculator/bpm_reg[7]_i_605/CO[3]
+                         net (fo=1, routed)           0.000    32.638    u_bpm_calculator/n_0_bpm_reg[7]_i_605
+    SLICE_X37Y46         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    32.752 r  u_bpm_calculator/bpm_reg[7]_i_600/CO[3]
+                         net (fo=1, routed)           0.000    32.752    u_bpm_calculator/n_0_bpm_reg[7]_i_600
+    SLICE_X37Y47         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    32.866 r  u_bpm_calculator/bpm_reg[7]_i_595/CO[3]
+                         net (fo=1, routed)           0.000    32.866    u_bpm_calculator/n_0_bpm_reg[7]_i_595
+    SLICE_X37Y48         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    32.980 r  u_bpm_calculator/bpm_reg[7]_i_590/CO[3]
+                         net (fo=1, routed)           0.000    32.980    u_bpm_calculator/n_0_bpm_reg[7]_i_590
+    SLICE_X37Y49         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    33.094 r  u_bpm_calculator/bpm_reg[7]_i_585/CO[3]
+                         net (fo=1, routed)           0.001    33.094    u_bpm_calculator/n_0_bpm_reg[7]_i_585
+    SLICE_X37Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    33.208 r  u_bpm_calculator/bpm_reg[7]_i_580/CO[3]
+                         net (fo=1, routed)           0.000    33.208    u_bpm_calculator/n_0_bpm_reg[7]_i_580
+    SLICE_X37Y51         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    33.322 r  u_bpm_calculator/bpm_reg[7]_i_577/CO[3]
+                         net (fo=1, routed)           0.000    33.322    u_bpm_calculator/n_0_bpm_reg[7]_i_577
+    SLICE_X37Y52         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    33.479 r  u_bpm_calculator/bpm_reg[7]_i_576/CO[1]
+                         net (fo=36, routed)          0.922    34.402    u_bpm_calculator/O17[0]
+    SLICE_X38Y45         LUT2 (Prop_lut2_I1_O)        0.329    34.731 r  u_bpm_calculator/bpm[7]_i_618/O
+                         net (fo=1, routed)           0.000    34.731    u_bpm_calculator/n_0_bpm[7]_i_618
+    SLICE_X38Y45         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533    35.264 r  u_bpm_calculator/bpm_reg[7]_i_567/CO[3]
+                         net (fo=1, routed)           0.000    35.264    u_bpm_calculator/n_0_bpm_reg[7]_i_567
+    SLICE_X38Y46         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    35.381 r  u_bpm_calculator/bpm_reg[7]_i_562/CO[3]
+                         net (fo=1, routed)           0.000    35.381    u_bpm_calculator/n_0_bpm_reg[7]_i_562
+    SLICE_X38Y47         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    35.498 r  u_bpm_calculator/bpm_reg[7]_i_557/CO[3]
+                         net (fo=1, routed)           0.000    35.498    u_bpm_calculator/n_0_bpm_reg[7]_i_557
+    SLICE_X38Y48         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    35.615 r  u_bpm_calculator/bpm_reg[7]_i_552/CO[3]
+                         net (fo=1, routed)           0.000    35.615    u_bpm_calculator/n_0_bpm_reg[7]_i_552
+    SLICE_X38Y49         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    35.732 r  u_bpm_calculator/bpm_reg[7]_i_547/CO[3]
+                         net (fo=1, routed)           0.001    35.732    u_bpm_calculator/n_0_bpm_reg[7]_i_547
+    SLICE_X38Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    35.849 r  u_bpm_calculator/bpm_reg[7]_i_542/CO[3]
+                         net (fo=1, routed)           0.000    35.849    u_bpm_calculator/n_0_bpm_reg[7]_i_542
+    SLICE_X38Y51         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    35.966 r  u_bpm_calculator/bpm_reg[7]_i_537/CO[3]
+                         net (fo=1, routed)           0.000    35.966    u_bpm_calculator/n_0_bpm_reg[7]_i_537
+    SLICE_X38Y52         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    36.083 r  u_bpm_calculator/bpm_reg[7]_i_534/CO[3]
+                         net (fo=1, routed)           0.000    36.083    u_bpm_calculator/n_0_bpm_reg[7]_i_534
+    SLICE_X38Y53         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    36.240 r  u_bpm_calculator/bpm_reg[7]_i_533/CO[1]
+                         net (fo=36, routed)          1.004    37.245    u_bpm_calculator/O19[0]
+    SLICE_X40Y45         LUT2 (Prop_lut2_I1_O)        0.332    37.577 r  u_bpm_calculator/bpm[7]_i_575/O
+                         net (fo=1, routed)           0.000    37.577    u_bpm_calculator/n_0_bpm[7]_i_575
+    SLICE_X40Y45         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    38.127 r  u_bpm_calculator/bpm_reg[7]_i_524/CO[3]
+                         net (fo=1, routed)           0.000    38.127    u_bpm_calculator/n_0_bpm_reg[7]_i_524
+    SLICE_X40Y46         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    38.241 r  u_bpm_calculator/bpm_reg[7]_i_519/CO[3]
+                         net (fo=1, routed)           0.000    38.241    u_bpm_calculator/n_0_bpm_reg[7]_i_519
+    SLICE_X40Y47         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    38.355 r  u_bpm_calculator/bpm_reg[7]_i_514/CO[3]
+                         net (fo=1, routed)           0.000    38.355    u_bpm_calculator/n_0_bpm_reg[7]_i_514
+    SLICE_X40Y48         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    38.469 r  u_bpm_calculator/bpm_reg[7]_i_509/CO[3]
+                         net (fo=1, routed)           0.000    38.469    u_bpm_calculator/n_0_bpm_reg[7]_i_509
+    SLICE_X40Y49         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    38.583 r  u_bpm_calculator/bpm_reg[7]_i_504/CO[3]
+                         net (fo=1, routed)           0.001    38.584    u_bpm_calculator/n_0_bpm_reg[7]_i_504
+    SLICE_X40Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    38.698 r  u_bpm_calculator/bpm_reg[7]_i_499/CO[3]
+                         net (fo=1, routed)           0.000    38.698    u_bpm_calculator/n_0_bpm_reg[7]_i_499
+    SLICE_X40Y51         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    38.812 r  u_bpm_calculator/bpm_reg[7]_i_494/CO[3]
+                         net (fo=1, routed)           0.000    38.812    u_bpm_calculator/n_0_bpm_reg[7]_i_494
+    SLICE_X40Y52         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    38.926 r  u_bpm_calculator/bpm_reg[7]_i_491/CO[3]
+                         net (fo=1, routed)           0.000    38.926    u_bpm_calculator/n_0_bpm_reg[7]_i_491
+    SLICE_X40Y53         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    39.083 r  u_bpm_calculator/bpm_reg[7]_i_490/CO[1]
+                         net (fo=36, routed)          0.917    39.999    u_bpm_calculator/O21[0]
+    SLICE_X41Y45         LUT2 (Prop_lut2_I1_O)        0.329    40.328 r  u_bpm_calculator/bpm[7]_i_532/O
+                         net (fo=1, routed)           0.000    40.328    u_bpm_calculator/n_0_bpm[7]_i_532
+    SLICE_X41Y45         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    40.878 r  u_bpm_calculator/bpm_reg[7]_i_481/CO[3]
+                         net (fo=1, routed)           0.000    40.878    u_bpm_calculator/n_0_bpm_reg[7]_i_481
+    SLICE_X41Y46         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    40.992 r  u_bpm_calculator/bpm_reg[7]_i_476/CO[3]
+                         net (fo=1, routed)           0.000    40.992    u_bpm_calculator/n_0_bpm_reg[7]_i_476
+    SLICE_X41Y47         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    41.106 r  u_bpm_calculator/bpm_reg[7]_i_471/CO[3]
+                         net (fo=1, routed)           0.000    41.106    u_bpm_calculator/n_0_bpm_reg[7]_i_471
+    SLICE_X41Y48         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    41.220 r  u_bpm_calculator/bpm_reg[7]_i_466/CO[3]
+                         net (fo=1, routed)           0.000    41.220    u_bpm_calculator/n_0_bpm_reg[7]_i_466
+    SLICE_X41Y49         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    41.334 r  u_bpm_calculator/bpm_reg[7]_i_461/CO[3]
+                         net (fo=1, routed)           0.001    41.335    u_bpm_calculator/n_0_bpm_reg[7]_i_461
+    SLICE_X41Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    41.449 r  u_bpm_calculator/bpm_reg[7]_i_456/CO[3]
+                         net (fo=1, routed)           0.000    41.449    u_bpm_calculator/n_0_bpm_reg[7]_i_456
+    SLICE_X41Y51         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    41.563 r  u_bpm_calculator/bpm_reg[7]_i_451/CO[3]
+                         net (fo=1, routed)           0.000    41.563    u_bpm_calculator/n_0_bpm_reg[7]_i_451
+    SLICE_X41Y52         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    41.677 r  u_bpm_calculator/bpm_reg[7]_i_448/CO[3]
+                         net (fo=1, routed)           0.000    41.677    u_bpm_calculator/n_0_bpm_reg[7]_i_448
+    SLICE_X41Y53         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    41.834 r  u_bpm_calculator/bpm_reg[7]_i_447/CO[1]
+                         net (fo=36, routed)          0.972    42.806    u_bpm_calculator/O23[0]
+    SLICE_X43Y46         LUT2 (Prop_lut2_I1_O)        0.329    43.135 r  u_bpm_calculator/bpm[7]_i_489/O
+                         net (fo=1, routed)           0.000    43.135    u_bpm_calculator/n_0_bpm[7]_i_489
+    SLICE_X43Y46         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    43.685 r  u_bpm_calculator/bpm_reg[7]_i_438/CO[3]
+                         net (fo=1, routed)           0.000    43.685    u_bpm_calculator/n_0_bpm_reg[7]_i_438
+    SLICE_X43Y47         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    43.799 r  u_bpm_calculator/bpm_reg[7]_i_433/CO[3]
+                         net (fo=1, routed)           0.000    43.799    u_bpm_calculator/n_0_bpm_reg[7]_i_433
+    SLICE_X43Y48         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    43.913 r  u_bpm_calculator/bpm_reg[7]_i_428/CO[3]
+                         net (fo=1, routed)           0.000    43.913    u_bpm_calculator/n_0_bpm_reg[7]_i_428
+    SLICE_X43Y49         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    44.027 r  u_bpm_calculator/bpm_reg[7]_i_423/CO[3]
+                         net (fo=1, routed)           0.001    44.028    u_bpm_calculator/n_0_bpm_reg[7]_i_423
+    SLICE_X43Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    44.142 r  u_bpm_calculator/bpm_reg[7]_i_418/CO[3]
+                         net (fo=1, routed)           0.000    44.142    u_bpm_calculator/n_0_bpm_reg[7]_i_418
+    SLICE_X43Y51         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    44.256 r  u_bpm_calculator/bpm_reg[7]_i_413/CO[3]
+                         net (fo=1, routed)           0.000    44.256    u_bpm_calculator/n_0_bpm_reg[7]_i_413
+    SLICE_X43Y52         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    44.370 r  u_bpm_calculator/bpm_reg[7]_i_408/CO[3]
+                         net (fo=1, routed)           0.000    44.370    u_bpm_calculator/n_0_bpm_reg[7]_i_408
+    SLICE_X43Y53         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    44.484 r  u_bpm_calculator/bpm_reg[7]_i_405/CO[3]
+                         net (fo=1, routed)           0.000    44.484    u_bpm_calculator/n_0_bpm_reg[7]_i_405
+    SLICE_X43Y54         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    44.641 r  u_bpm_calculator/bpm_reg[7]_i_404/CO[1]
+                         net (fo=36, routed)          0.970    45.611    u_bpm_calculator/O25[0]
+    SLICE_X42Y47         LUT2 (Prop_lut2_I1_O)        0.329    45.940 r  u_bpm_calculator/bpm[7]_i_446/O
+                         net (fo=1, routed)           0.000    45.940    u_bpm_calculator/n_0_bpm[7]_i_446
+    SLICE_X42Y47         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533    46.473 r  u_bpm_calculator/bpm_reg[7]_i_395/CO[3]
+                         net (fo=1, routed)           0.000    46.473    u_bpm_calculator/n_0_bpm_reg[7]_i_395
+    SLICE_X42Y48         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    46.590 r  u_bpm_calculator/bpm_reg[7]_i_390/CO[3]
+                         net (fo=1, routed)           0.000    46.590    u_bpm_calculator/n_0_bpm_reg[7]_i_390
+    SLICE_X42Y49         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    46.707 r  u_bpm_calculator/bpm_reg[7]_i_385/CO[3]
+                         net (fo=1, routed)           0.001    46.708    u_bpm_calculator/n_0_bpm_reg[7]_i_385
+    SLICE_X42Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    46.825 r  u_bpm_calculator/bpm_reg[7]_i_380/CO[3]
+                         net (fo=1, routed)           0.000    46.825    u_bpm_calculator/n_0_bpm_reg[7]_i_380
+    SLICE_X42Y51         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    46.942 r  u_bpm_calculator/bpm_reg[7]_i_375/CO[3]
+                         net (fo=1, routed)           0.000    46.942    u_bpm_calculator/n_0_bpm_reg[7]_i_375
+    SLICE_X42Y52         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    47.059 r  u_bpm_calculator/bpm_reg[7]_i_370/CO[3]
+                         net (fo=1, routed)           0.000    47.059    u_bpm_calculator/n_0_bpm_reg[7]_i_370
+    SLICE_X42Y53         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    47.176 r  u_bpm_calculator/bpm_reg[7]_i_365/CO[3]
+                         net (fo=1, routed)           0.000    47.176    u_bpm_calculator/n_0_bpm_reg[7]_i_365
+    SLICE_X42Y54         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    47.293 r  u_bpm_calculator/bpm_reg[7]_i_362/CO[3]
+                         net (fo=1, routed)           0.000    47.293    u_bpm_calculator/n_0_bpm_reg[7]_i_362
+    SLICE_X42Y55         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    47.450 r  u_bpm_calculator/bpm_reg[7]_i_361/CO[1]
+                         net (fo=36, routed)          1.013    48.462    u_bpm_calculator/O27[0]
+    SLICE_X44Y47         LUT2 (Prop_lut2_I0_O)        0.332    48.794 r  u_bpm_calculator/bpm[7]_i_403/O
+                         net (fo=1, routed)           0.000    48.794    u_bpm_calculator/n_0_bpm[7]_i_403
+    SLICE_X44Y47         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    49.344 r  u_bpm_calculator/bpm_reg[7]_i_324/CO[3]
+                         net (fo=1, routed)           0.000    49.344    u_bpm_calculator/n_0_bpm_reg[7]_i_324
+    SLICE_X44Y48         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    49.458 r  u_bpm_calculator/bpm_reg[7]_i_319/CO[3]
+                         net (fo=1, routed)           0.000    49.458    u_bpm_calculator/n_0_bpm_reg[7]_i_319
+    SLICE_X44Y49         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    49.572 r  u_bpm_calculator/bpm_reg[7]_i_314/CO[3]
+                         net (fo=1, routed)           0.001    49.573    u_bpm_calculator/n_0_bpm_reg[7]_i_314
+    SLICE_X44Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    49.687 r  u_bpm_calculator/bpm_reg[7]_i_309/CO[3]
+                         net (fo=1, routed)           0.000    49.687    u_bpm_calculator/n_0_bpm_reg[7]_i_309
+    SLICE_X44Y51         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    49.801 r  u_bpm_calculator/bpm_reg[7]_i_304/CO[3]
+                         net (fo=1, routed)           0.000    49.801    u_bpm_calculator/n_0_bpm_reg[7]_i_304
+    SLICE_X44Y52         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    49.915 r  u_bpm_calculator/bpm_reg[7]_i_299/CO[3]
+                         net (fo=1, routed)           0.000    49.915    u_bpm_calculator/n_0_bpm_reg[7]_i_299
+    SLICE_X44Y53         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    50.029 r  u_bpm_calculator/bpm_reg[7]_i_294/CO[3]
+                         net (fo=1, routed)           0.000    50.029    u_bpm_calculator/n_0_bpm_reg[7]_i_294
+    SLICE_X44Y54         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    50.143 r  u_bpm_calculator/bpm_reg[7]_i_291/CO[3]
+                         net (fo=1, routed)           0.000    50.143    u_bpm_calculator/n_0_bpm_reg[7]_i_291
+    SLICE_X44Y55         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    50.300 r  u_bpm_calculator/bpm_reg[7]_i_290/CO[1]
+                         net (fo=36, routed)          0.978    51.278    u_bpm_calculator/O29[0]
+    SLICE_X45Y50         LUT2 (Prop_lut2_I1_O)        0.329    51.607 r  u_bpm_calculator/bpm[7]_i_360/O
+                         net (fo=1, routed)           0.000    51.607    u_bpm_calculator/n_0_bpm[7]_i_360
+    SLICE_X45Y50         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    52.157 r  u_bpm_calculator/bpm_reg[7]_i_285/CO[3]
+                         net (fo=1, routed)           0.000    52.157    u_bpm_calculator/n_0_bpm_reg[7]_i_285
+    SLICE_X45Y51         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    52.271 r  u_bpm_calculator/bpm_reg[7]_i_249/CO[3]
+                         net (fo=1, routed)           0.000    52.271    u_bpm_calculator/n_0_bpm_reg[7]_i_249
+    SLICE_X45Y52         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    52.385 r  u_bpm_calculator/bpm_reg[7]_i_244/CO[3]
+                         net (fo=1, routed)           0.000    52.385    u_bpm_calculator/n_0_bpm_reg[7]_i_244
+    SLICE_X45Y53         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    52.499 r  u_bpm_calculator/bpm_reg[7]_i_239/CO[3]
+                         net (fo=1, routed)           0.000    52.499    u_bpm_calculator/n_0_bpm_reg[7]_i_239
+    SLICE_X45Y54         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    52.613 r  u_bpm_calculator/bpm_reg[7]_i_234/CO[3]
+                         net (fo=1, routed)           0.000    52.613    u_bpm_calculator/n_0_bpm_reg[7]_i_234
+    SLICE_X45Y55         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    52.727 r  u_bpm_calculator/bpm_reg[7]_i_229/CO[3]
+                         net (fo=1, routed)           0.000    52.727    u_bpm_calculator/n_0_bpm_reg[7]_i_229
+    SLICE_X45Y56         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    52.841 r  u_bpm_calculator/bpm_reg[7]_i_224/CO[3]
+                         net (fo=1, routed)           0.000    52.841    u_bpm_calculator/n_0_bpm_reg[7]_i_224
+    SLICE_X45Y57         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    52.955 r  u_bpm_calculator/bpm_reg[7]_i_221/CO[3]
+                         net (fo=1, routed)           0.000    52.955    u_bpm_calculator/n_0_bpm_reg[7]_i_221
+    SLICE_X45Y58         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    53.112 r  u_bpm_calculator/bpm_reg[7]_i_220/CO[1]
+                         net (fo=36, routed)          0.864    53.976    u_bpm_calculator/O31[0]
+    SLICE_X43Y55         LUT2 (Prop_lut2_I0_O)        0.329    54.305 r  u_bpm_calculator/bpm[7]_i_356/O
+                         net (fo=1, routed)           0.000    54.305    u_bpm_calculator/n_0_bpm[7]_i_356
+    SLICE_X43Y55         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    54.855 r  u_bpm_calculator/bpm_reg[7]_i_280/CO[3]
+                         net (fo=1, routed)           0.000    54.855    u_bpm_calculator/n_0_bpm_reg[7]_i_280
+    SLICE_X43Y56         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    54.969 r  u_bpm_calculator/bpm_reg[7]_i_215/CO[3]
+                         net (fo=1, routed)           0.000    54.969    u_bpm_calculator/n_0_bpm_reg[7]_i_215
+    SLICE_X43Y57         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    55.083 r  u_bpm_calculator/bpm_reg[7]_i_184/CO[3]
+                         net (fo=1, routed)           0.000    55.083    u_bpm_calculator/n_0_bpm_reg[7]_i_184
+    SLICE_X43Y58         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    55.197 r  u_bpm_calculator/bpm_reg[7]_i_179/CO[3]
+                         net (fo=1, routed)           0.000    55.197    u_bpm_calculator/n_0_bpm_reg[7]_i_179
+    SLICE_X43Y59         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    55.311 r  u_bpm_calculator/bpm_reg[7]_i_174/CO[3]
+                         net (fo=1, routed)           0.000    55.311    u_bpm_calculator/n_0_bpm_reg[7]_i_174
+    SLICE_X43Y60         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    55.425 r  u_bpm_calculator/bpm_reg[7]_i_169/CO[3]
+                         net (fo=1, routed)           0.000    55.425    u_bpm_calculator/n_0_bpm_reg[7]_i_169
+    SLICE_X43Y61         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    55.539 r  u_bpm_calculator/bpm_reg[7]_i_164/CO[3]
+                         net (fo=1, routed)           0.000    55.539    u_bpm_calculator/n_0_bpm_reg[7]_i_164
+    SLICE_X43Y62         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    55.653 r  u_bpm_calculator/bpm_reg[7]_i_161/CO[3]
+                         net (fo=1, routed)           0.000    55.653    u_bpm_calculator/n_0_bpm_reg[7]_i_161
+    SLICE_X43Y63         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    55.810 r  u_bpm_calculator/bpm_reg[7]_i_160/CO[1]
+                         net (fo=36, routed)          0.947    56.757    u_bpm_calculator/O33[0]
+    SLICE_X42Y56         LUT2 (Prop_lut2_I0_O)        0.329    57.086 r  u_bpm_calculator/bpm[7]_i_352/O
+                         net (fo=1, routed)           0.000    57.086    u_bpm_calculator/n_0_bpm[7]_i_352
+    SLICE_X42Y56         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533    57.619 r  u_bpm_calculator/bpm_reg[7]_i_275/CO[3]
+                         net (fo=1, routed)           0.000    57.619    u_bpm_calculator/n_0_bpm_reg[7]_i_275
+    SLICE_X42Y57         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    57.736 r  u_bpm_calculator/bpm_reg[7]_i_210/CO[3]
+                         net (fo=1, routed)           0.000    57.736    u_bpm_calculator/n_0_bpm_reg[7]_i_210
+    SLICE_X42Y58         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    57.853 r  u_bpm_calculator/bpm_reg[7]_i_155/CO[3]
+                         net (fo=1, routed)           0.000    57.853    u_bpm_calculator/n_0_bpm_reg[7]_i_155
+    SLICE_X42Y59         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    57.970 r  u_bpm_calculator/bpm_reg[7]_i_129/CO[3]
+                         net (fo=1, routed)           0.000    57.970    u_bpm_calculator/n_0_bpm_reg[7]_i_129
+    SLICE_X42Y60         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    58.087 r  u_bpm_calculator/bpm_reg[7]_i_124/CO[3]
+                         net (fo=1, routed)           0.000    58.087    u_bpm_calculator/n_0_bpm_reg[7]_i_124
+    SLICE_X42Y61         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    58.204 r  u_bpm_calculator/bpm_reg[7]_i_119/CO[3]
+                         net (fo=1, routed)           0.000    58.204    u_bpm_calculator/n_0_bpm_reg[7]_i_119
+    SLICE_X42Y62         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    58.321 r  u_bpm_calculator/bpm_reg[7]_i_114/CO[3]
+                         net (fo=1, routed)           0.000    58.321    u_bpm_calculator/n_0_bpm_reg[7]_i_114
+    SLICE_X42Y63         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    58.438 r  u_bpm_calculator/bpm_reg[7]_i_111/CO[3]
+                         net (fo=1, routed)           0.000    58.438    u_bpm_calculator/n_0_bpm_reg[7]_i_111
+    SLICE_X42Y64         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    58.595 r  u_bpm_calculator/bpm_reg[7]_i_110/CO[1]
+                         net (fo=36, routed)          1.076    59.671    u_bpm_calculator/O35[0]
+    SLICE_X44Y56         LUT2 (Prop_lut2_I0_O)        0.332    60.003 r  u_bpm_calculator/bpm[7]_i_348/O
+                         net (fo=1, routed)           0.000    60.003    u_bpm_calculator/n_0_bpm[7]_i_348
+    SLICE_X44Y56         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    60.553 r  u_bpm_calculator/bpm_reg[7]_i_270/CO[3]
+                         net (fo=1, routed)           0.000    60.553    u_bpm_calculator/n_0_bpm_reg[7]_i_270
+    SLICE_X44Y57         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    60.667 r  u_bpm_calculator/bpm_reg[7]_i_205/CO[3]
+                         net (fo=1, routed)           0.000    60.667    u_bpm_calculator/n_0_bpm_reg[7]_i_205
+    SLICE_X44Y58         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    60.781 r  u_bpm_calculator/bpm_reg[7]_i_150/CO[3]
+                         net (fo=1, routed)           0.000    60.781    u_bpm_calculator/n_0_bpm_reg[7]_i_150
+    SLICE_X44Y59         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    60.895 r  u_bpm_calculator/bpm_reg[7]_i_105/CO[3]
+                         net (fo=1, routed)           0.000    60.895    u_bpm_calculator/n_0_bpm_reg[7]_i_105
+    SLICE_X44Y60         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    61.009 r  u_bpm_calculator/bpm_reg[7]_i_84/CO[3]
+                         net (fo=1, routed)           0.000    61.009    u_bpm_calculator/n_0_bpm_reg[7]_i_84
+    SLICE_X44Y61         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    61.123 r  u_bpm_calculator/bpm_reg[7]_i_79/CO[3]
+                         net (fo=1, routed)           0.000    61.123    u_bpm_calculator/n_0_bpm_reg[7]_i_79
+    SLICE_X44Y62         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    61.237 r  u_bpm_calculator/bpm_reg[7]_i_74/CO[3]
+                         net (fo=1, routed)           0.000    61.237    u_bpm_calculator/n_0_bpm_reg[7]_i_74
+    SLICE_X44Y63         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    61.351 r  u_bpm_calculator/bpm_reg[7]_i_71/CO[3]
+                         net (fo=1, routed)           0.000    61.351    u_bpm_calculator/n_0_bpm_reg[7]_i_71
+    SLICE_X44Y64         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    61.508 r  u_bpm_calculator/bpm_reg[7]_i_70/CO[1]
+                         net (fo=36, routed)          1.193    62.701    u_bpm_calculator/O37[0]
+    SLICE_X46Y47         LUT2 (Prop_lut2_I0_O)        0.329    63.030 r  u_bpm_calculator/bpm[7]_i_344/O
+                         net (fo=1, routed)           0.000    63.030    u_bpm_calculator/n_0_bpm[7]_i_344
+    SLICE_X46Y47         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533    63.563 r  u_bpm_calculator/bpm_reg[7]_i_265/CO[3]
+                         net (fo=1, routed)           0.000    63.563    u_bpm_calculator/n_0_bpm_reg[7]_i_265
+    SLICE_X46Y48         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    63.680 r  u_bpm_calculator/bpm_reg[7]_i_200/CO[3]
+                         net (fo=1, routed)           0.000    63.680    u_bpm_calculator/n_0_bpm_reg[7]_i_200
+    SLICE_X46Y49         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    63.797 r  u_bpm_calculator/bpm_reg[7]_i_145/CO[3]
+                         net (fo=1, routed)           0.001    63.798    u_bpm_calculator/n_0_bpm_reg[7]_i_145
+    SLICE_X46Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    63.915 r  u_bpm_calculator/bpm_reg[7]_i_100/CO[3]
+                         net (fo=1, routed)           0.000    63.915    u_bpm_calculator/n_0_bpm_reg[7]_i_100
+    SLICE_X46Y51         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    64.032 r  u_bpm_calculator/bpm_reg[7]_i_65/CO[3]
+                         net (fo=1, routed)           0.000    64.032    u_bpm_calculator/n_0_bpm_reg[7]_i_65
+    SLICE_X46Y52         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    64.149 r  u_bpm_calculator/bpm_reg[7]_i_49/CO[3]
+                         net (fo=1, routed)           0.000    64.149    u_bpm_calculator/n_0_bpm_reg[7]_i_49
+    SLICE_X46Y53         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    64.266 r  u_bpm_calculator/bpm_reg[7]_i_44/CO[3]
+                         net (fo=1, routed)           0.000    64.266    u_bpm_calculator/n_0_bpm_reg[7]_i_44
+    SLICE_X46Y54         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    64.383 r  u_bpm_calculator/bpm_reg[7]_i_41/CO[3]
+                         net (fo=1, routed)           0.000    64.383    u_bpm_calculator/n_0_bpm_reg[7]_i_41
+    SLICE_X46Y55         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    64.540 r  u_bpm_calculator/bpm_reg[7]_i_40/CO[1]
+                         net (fo=36, routed)          1.070    65.610    u_bpm_calculator/O39[0]
+    SLICE_X39Y48         LUT2 (Prop_lut2_I1_O)        0.332    65.942 r  u_bpm_calculator/bpm[7]_i_340/O
+                         net (fo=1, routed)           0.000    65.942    u_bpm_calculator/n_0_bpm[7]_i_340
+    SLICE_X39Y48         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    66.492 r  u_bpm_calculator/bpm_reg[7]_i_260/CO[3]
+                         net (fo=1, routed)           0.000    66.492    u_bpm_calculator/n_0_bpm_reg[7]_i_260
+    SLICE_X39Y49         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    66.606 r  u_bpm_calculator/bpm_reg[7]_i_195/CO[3]
+                         net (fo=1, routed)           0.001    66.606    u_bpm_calculator/n_0_bpm_reg[7]_i_195
+    SLICE_X39Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    66.720 r  u_bpm_calculator/bpm_reg[7]_i_140/CO[3]
+                         net (fo=1, routed)           0.000    66.720    u_bpm_calculator/n_0_bpm_reg[7]_i_140
+    SLICE_X39Y51         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    66.834 r  u_bpm_calculator/bpm_reg[7]_i_95/CO[3]
+                         net (fo=1, routed)           0.000    66.834    u_bpm_calculator/n_0_bpm_reg[7]_i_95
+    SLICE_X39Y52         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    66.948 r  u_bpm_calculator/bpm_reg[7]_i_60/CO[3]
+                         net (fo=1, routed)           0.000    66.948    u_bpm_calculator/n_0_bpm_reg[7]_i_60
+    SLICE_X39Y53         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    67.062 r  u_bpm_calculator/bpm_reg[7]_i_35/CO[3]
+                         net (fo=1, routed)           0.000    67.062    u_bpm_calculator/n_0_bpm_reg[7]_i_35
+    SLICE_X39Y54         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    67.176 r  u_bpm_calculator/bpm_reg[7]_i_24/CO[3]
+                         net (fo=1, routed)           0.000    67.176    u_bpm_calculator/n_0_bpm_reg[7]_i_24
+    SLICE_X39Y55         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    67.290 r  u_bpm_calculator/bpm_reg[7]_i_21/CO[3]
+                         net (fo=1, routed)           0.000    67.290    u_bpm_calculator/n_0_bpm_reg[7]_i_21
+    SLICE_X39Y56         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    67.447 r  u_bpm_calculator/bpm_reg[7]_i_20/CO[1]
+                         net (fo=36, routed)          0.715    68.163    u_bpm_calculator/O41[0]
+    SLICE_X40Y56         LUT2 (Prop_lut2_I1_O)        0.329    68.492 r  u_bpm_calculator/bpm[7]_i_336/O
+                         net (fo=1, routed)           0.000    68.492    u_bpm_calculator/n_0_bpm[7]_i_336
+    SLICE_X40Y56         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    69.042 r  u_bpm_calculator/bpm_reg[7]_i_255/CO[3]
+                         net (fo=1, routed)           0.000    69.042    u_bpm_calculator/n_0_bpm_reg[7]_i_255
+    SLICE_X40Y57         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    69.156 r  u_bpm_calculator/bpm_reg[7]_i_190/CO[3]
+                         net (fo=1, routed)           0.000    69.156    u_bpm_calculator/n_0_bpm_reg[7]_i_190
+    SLICE_X40Y58         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    69.270 r  u_bpm_calculator/bpm_reg[7]_i_135/CO[3]
+                         net (fo=1, routed)           0.000    69.270    u_bpm_calculator/n_0_bpm_reg[7]_i_135
+    SLICE_X40Y59         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    69.384 r  u_bpm_calculator/bpm_reg[7]_i_90/CO[3]
+                         net (fo=1, routed)           0.000    69.384    u_bpm_calculator/n_0_bpm_reg[7]_i_90
+    SLICE_X40Y60         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    69.498 r  u_bpm_calculator/bpm_reg[7]_i_55/CO[3]
+                         net (fo=1, routed)           0.000    69.498    u_bpm_calculator/n_0_bpm_reg[7]_i_55
+    SLICE_X40Y61         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    69.612 r  u_bpm_calculator/bpm_reg[7]_i_30/CO[3]
+                         net (fo=1, routed)           0.000    69.612    u_bpm_calculator/n_0_bpm_reg[7]_i_30
+    SLICE_X40Y62         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    69.726 r  u_bpm_calculator/bpm_reg[7]_i_15/CO[3]
+                         net (fo=1, routed)           0.000    69.726    u_bpm_calculator/n_0_bpm_reg[7]_i_15
+    SLICE_X40Y63         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    69.840 r  u_bpm_calculator/bpm_reg[7]_i_11/CO[3]
+                         net (fo=1, routed)           0.000    69.840    u_bpm_calculator/n_0_bpm_reg[7]_i_11
+    SLICE_X40Y64         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    69.997 r  u_bpm_calculator/bpm_reg[7]_i_10/CO[1]
+                         net (fo=36, routed)          1.030    71.027    u_bpm_calculator/n_2_bpm_reg[7]_i_10
+    SLICE_X38Y57         LUT2 (Prop_lut2_I1_O)        0.329    71.356 r  u_bpm_calculator/bpm[7]_i_332/O
+                         net (fo=1, routed)           0.000    71.356    u_bpm_calculator/n_0_bpm[7]_i_332
+    SLICE_X38Y57         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533    71.889 r  u_bpm_calculator/bpm_reg[7]_i_254/CO[3]
+                         net (fo=1, routed)           0.000    71.889    u_bpm_calculator/n_0_bpm_reg[7]_i_254
+    SLICE_X38Y58         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    72.006 r  u_bpm_calculator/bpm_reg[7]_i_189/CO[3]
+                         net (fo=1, routed)           0.000    72.006    u_bpm_calculator/n_0_bpm_reg[7]_i_189
+    SLICE_X38Y59         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    72.123 r  u_bpm_calculator/bpm_reg[7]_i_134/CO[3]
+                         net (fo=1, routed)           0.000    72.123    u_bpm_calculator/n_0_bpm_reg[7]_i_134
+    SLICE_X38Y60         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    72.240 r  u_bpm_calculator/bpm_reg[7]_i_89/CO[3]
+                         net (fo=1, routed)           0.000    72.240    u_bpm_calculator/n_0_bpm_reg[7]_i_89
+    SLICE_X38Y61         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    72.357 r  u_bpm_calculator/bpm_reg[7]_i_54/CO[3]
+                         net (fo=1, routed)           0.000    72.357    u_bpm_calculator/n_0_bpm_reg[7]_i_54
+    SLICE_X38Y62         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    72.474 r  u_bpm_calculator/bpm_reg[7]_i_29/CO[3]
+                         net (fo=1, routed)           0.000    72.474    u_bpm_calculator/n_0_bpm_reg[7]_i_29
+    SLICE_X38Y63         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    72.591 r  u_bpm_calculator/bpm_reg[7]_i_14/CO[3]
+                         net (fo=1, routed)           0.000    72.591    u_bpm_calculator/n_0_bpm_reg[7]_i_14
+    SLICE_X38Y64         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    72.708 r  u_bpm_calculator/bpm_reg[7]_i_9/CO[3]
+                         net (fo=1, routed)           0.000    72.708    u_bpm_calculator/n_0_bpm_reg[7]_i_9
+    SLICE_X38Y65         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.179    72.887 r  u_bpm_calculator/bpm_reg[7]_i_2/CO[1]
+                         net (fo=37, routed)          0.874    73.761    u_bpm_calculator/p_1_in[7]
+    SLICE_X39Y57         LUT2 (Prop_lut2_I1_O)        0.332    74.093 r  u_bpm_calculator/bpm[6]_i_43/O
+                         net (fo=1, routed)           0.000    74.093    u_bpm_calculator/n_0_bpm[6]_i_43
+    SLICE_X39Y57         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    74.643 r  u_bpm_calculator/bpm_reg[6]_i_35/CO[3]
+                         net (fo=1, routed)           0.000    74.643    u_bpm_calculator/n_0_bpm_reg[6]_i_35
+    SLICE_X39Y58         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    74.757 r  u_bpm_calculator/bpm_reg[6]_i_30/CO[3]
+                         net (fo=1, routed)           0.000    74.757    u_bpm_calculator/n_0_bpm_reg[6]_i_30
+    SLICE_X39Y59         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    74.871 r  u_bpm_calculator/bpm_reg[6]_i_25/CO[3]
+                         net (fo=1, routed)           0.000    74.871    u_bpm_calculator/n_0_bpm_reg[6]_i_25
+    SLICE_X39Y60         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    74.985 r  u_bpm_calculator/bpm_reg[6]_i_20/CO[3]
+                         net (fo=1, routed)           0.000    74.985    u_bpm_calculator/n_0_bpm_reg[6]_i_20
+    SLICE_X39Y61         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    75.099 r  u_bpm_calculator/bpm_reg[6]_i_15/CO[3]
+                         net (fo=1, routed)           0.000    75.099    u_bpm_calculator/n_0_bpm_reg[6]_i_15
+    SLICE_X39Y62         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    75.213 r  u_bpm_calculator/bpm_reg[6]_i_10/CO[3]
+                         net (fo=1, routed)           0.000    75.213    u_bpm_calculator/n_0_bpm_reg[6]_i_10
+    SLICE_X39Y63         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    75.327 r  u_bpm_calculator/bpm_reg[6]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    75.327    u_bpm_calculator/n_0_bpm_reg[6]_i_5
+    SLICE_X39Y64         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    75.441 r  u_bpm_calculator/bpm_reg[6]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    75.441    u_bpm_calculator/n_0_bpm_reg[6]_i_2
+    SLICE_X39Y65         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.178    75.619 r  u_bpm_calculator/bpm_reg[6]_i_1/CO[1]
+                         net (fo=37, routed)          1.017    76.636    u_bpm_calculator/p_1_in[6]
+    SLICE_X41Y59         LUT2 (Prop_lut2_I1_O)        0.329    76.965 r  u_bpm_calculator/bpm[5]_i_43/O
+                         net (fo=1, routed)           0.000    76.965    u_bpm_calculator/n_0_bpm[5]_i_43
+    SLICE_X41Y59         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    77.515 r  u_bpm_calculator/bpm_reg[5]_i_35/CO[3]
+                         net (fo=1, routed)           0.000    77.515    u_bpm_calculator/n_0_bpm_reg[5]_i_35
+    SLICE_X41Y60         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    77.629 r  u_bpm_calculator/bpm_reg[5]_i_30/CO[3]
+                         net (fo=1, routed)           0.000    77.629    u_bpm_calculator/n_0_bpm_reg[5]_i_30
+    SLICE_X41Y61         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    77.743 r  u_bpm_calculator/bpm_reg[5]_i_25/CO[3]
+                         net (fo=1, routed)           0.000    77.743    u_bpm_calculator/n_0_bpm_reg[5]_i_25
+    SLICE_X41Y62         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    77.857 r  u_bpm_calculator/bpm_reg[5]_i_20/CO[3]
+                         net (fo=1, routed)           0.000    77.857    u_bpm_calculator/n_0_bpm_reg[5]_i_20
+    SLICE_X41Y63         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    77.971 r  u_bpm_calculator/bpm_reg[5]_i_15/CO[3]
+                         net (fo=1, routed)           0.000    77.971    u_bpm_calculator/n_0_bpm_reg[5]_i_15
+    SLICE_X41Y64         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    78.085 r  u_bpm_calculator/bpm_reg[5]_i_10/CO[3]
+                         net (fo=1, routed)           0.000    78.085    u_bpm_calculator/n_0_bpm_reg[5]_i_10
+    SLICE_X41Y65         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    78.199 r  u_bpm_calculator/bpm_reg[5]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    78.199    u_bpm_calculator/n_0_bpm_reg[5]_i_5
+    SLICE_X41Y66         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    78.313 r  u_bpm_calculator/bpm_reg[5]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    78.313    u_bpm_calculator/n_0_bpm_reg[5]_i_2
+    SLICE_X41Y67         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.178    78.491 r  u_bpm_calculator/bpm_reg[5]_i_1/CO[1]
+                         net (fo=37, routed)          0.913    79.403    u_bpm_calculator/p_1_in[5]
+    SLICE_X37Y62         LUT2 (Prop_lut2_I1_O)        0.329    79.732 r  u_bpm_calculator/bpm[4]_i_43/O
+                         net (fo=1, routed)           0.000    79.732    u_bpm_calculator/n_0_bpm[4]_i_43
+    SLICE_X37Y62         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    80.282 r  u_bpm_calculator/bpm_reg[4]_i_35/CO[3]
+                         net (fo=1, routed)           0.000    80.282    u_bpm_calculator/n_0_bpm_reg[4]_i_35
+    SLICE_X37Y63         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    80.396 r  u_bpm_calculator/bpm_reg[4]_i_30/CO[3]
+                         net (fo=1, routed)           0.000    80.396    u_bpm_calculator/n_0_bpm_reg[4]_i_30
+    SLICE_X37Y64         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    80.510 r  u_bpm_calculator/bpm_reg[4]_i_25/CO[3]
+                         net (fo=1, routed)           0.000    80.510    u_bpm_calculator/n_0_bpm_reg[4]_i_25
+    SLICE_X37Y65         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    80.624 r  u_bpm_calculator/bpm_reg[4]_i_20/CO[3]
+                         net (fo=1, routed)           0.000    80.624    u_bpm_calculator/n_0_bpm_reg[4]_i_20
+    SLICE_X37Y66         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    80.738 r  u_bpm_calculator/bpm_reg[4]_i_15/CO[3]
+                         net (fo=1, routed)           0.000    80.738    u_bpm_calculator/n_0_bpm_reg[4]_i_15
+    SLICE_X37Y67         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    80.852 r  u_bpm_calculator/bpm_reg[4]_i_10/CO[3]
+                         net (fo=1, routed)           0.000    80.852    u_bpm_calculator/n_0_bpm_reg[4]_i_10
+    SLICE_X37Y68         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    80.966 r  u_bpm_calculator/bpm_reg[4]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    80.966    u_bpm_calculator/n_0_bpm_reg[4]_i_5
+    SLICE_X37Y69         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    81.080 r  u_bpm_calculator/bpm_reg[4]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    81.080    u_bpm_calculator/n_0_bpm_reg[4]_i_2
+    SLICE_X37Y70         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.178    81.258 r  u_bpm_calculator/bpm_reg[4]_i_1/CO[1]
+                         net (fo=37, routed)          0.971    82.229    u_bpm_calculator/p_1_in[4]
+    SLICE_X40Y65         LUT2 (Prop_lut2_I1_O)        0.329    82.558 r  u_bpm_calculator/bpm[3]_i_43/O
+                         net (fo=1, routed)           0.000    82.558    u_bpm_calculator/n_0_bpm[3]_i_43
+    SLICE_X40Y65         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    83.108 r  u_bpm_calculator/bpm_reg[3]_i_35/CO[3]
+                         net (fo=1, routed)           0.000    83.108    u_bpm_calculator/n_0_bpm_reg[3]_i_35
+    SLICE_X40Y66         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    83.222 r  u_bpm_calculator/bpm_reg[3]_i_30/CO[3]
+                         net (fo=1, routed)           0.000    83.222    u_bpm_calculator/n_0_bpm_reg[3]_i_30
+    SLICE_X40Y67         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    83.336 r  u_bpm_calculator/bpm_reg[3]_i_25/CO[3]
+                         net (fo=1, routed)           0.000    83.336    u_bpm_calculator/n_0_bpm_reg[3]_i_25
+    SLICE_X40Y68         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    83.450 r  u_bpm_calculator/bpm_reg[3]_i_20/CO[3]
+                         net (fo=1, routed)           0.000    83.450    u_bpm_calculator/n_0_bpm_reg[3]_i_20
+    SLICE_X40Y69         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    83.564 r  u_bpm_calculator/bpm_reg[3]_i_15/CO[3]
+                         net (fo=1, routed)           0.000    83.564    u_bpm_calculator/n_0_bpm_reg[3]_i_15
+    SLICE_X40Y70         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    83.678 r  u_bpm_calculator/bpm_reg[3]_i_10/CO[3]
+                         net (fo=1, routed)           0.000    83.678    u_bpm_calculator/n_0_bpm_reg[3]_i_10
+    SLICE_X40Y71         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    83.792 r  u_bpm_calculator/bpm_reg[3]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    83.792    u_bpm_calculator/n_0_bpm_reg[3]_i_5
+    SLICE_X40Y72         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    83.906 r  u_bpm_calculator/bpm_reg[3]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    83.906    u_bpm_calculator/n_0_bpm_reg[3]_i_2
+    SLICE_X40Y73         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.178    84.084 r  u_bpm_calculator/bpm_reg[3]_i_1/CO[1]
+                         net (fo=37, routed)          0.960    85.044    u_bpm_calculator/p_1_in[3]
+    SLICE_X39Y67         LUT2 (Prop_lut2_I1_O)        0.329    85.373 r  u_bpm_calculator/bpm[2]_i_43/O
+                         net (fo=1, routed)           0.000    85.373    u_bpm_calculator/n_0_bpm[2]_i_43
+    SLICE_X39Y67         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    85.923 r  u_bpm_calculator/bpm_reg[2]_i_35/CO[3]
+                         net (fo=1, routed)           0.000    85.923    u_bpm_calculator/n_0_bpm_reg[2]_i_35
+    SLICE_X39Y68         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    86.037 r  u_bpm_calculator/bpm_reg[2]_i_30/CO[3]
+                         net (fo=1, routed)           0.000    86.037    u_bpm_calculator/n_0_bpm_reg[2]_i_30
+    SLICE_X39Y69         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    86.151 r  u_bpm_calculator/bpm_reg[2]_i_25/CO[3]
+                         net (fo=1, routed)           0.000    86.151    u_bpm_calculator/n_0_bpm_reg[2]_i_25
+    SLICE_X39Y70         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    86.265 r  u_bpm_calculator/bpm_reg[2]_i_20/CO[3]
+                         net (fo=1, routed)           0.000    86.265    u_bpm_calculator/n_0_bpm_reg[2]_i_20
+    SLICE_X39Y71         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    86.379 r  u_bpm_calculator/bpm_reg[2]_i_15/CO[3]
+                         net (fo=1, routed)           0.000    86.379    u_bpm_calculator/n_0_bpm_reg[2]_i_15
+    SLICE_X39Y72         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    86.493 r  u_bpm_calculator/bpm_reg[2]_i_10/CO[3]
+                         net (fo=1, routed)           0.000    86.493    u_bpm_calculator/n_0_bpm_reg[2]_i_10
+    SLICE_X39Y73         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    86.607 r  u_bpm_calculator/bpm_reg[2]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    86.607    u_bpm_calculator/n_0_bpm_reg[2]_i_5
+    SLICE_X39Y74         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    86.721 r  u_bpm_calculator/bpm_reg[2]_i_2/CO[3]
+                         net (fo=1, routed)           0.009    86.730    u_bpm_calculator/n_0_bpm_reg[2]_i_2
+    SLICE_X39Y75         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.178    86.908 r  u_bpm_calculator/bpm_reg[2]_i_1/CO[1]
+                         net (fo=37, routed)          0.980    87.888    u_bpm_calculator/p_1_in[2]
+    SLICE_X38Y70         LUT2 (Prop_lut2_I1_O)        0.329    88.217 r  u_bpm_calculator/bpm[1]_i_43/O
+                         net (fo=1, routed)           0.000    88.217    u_bpm_calculator/n_0_bpm[1]_i_43
+    SLICE_X38Y70         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533    88.750 r  u_bpm_calculator/bpm_reg[1]_i_35/CO[3]
+                         net (fo=1, routed)           0.000    88.750    u_bpm_calculator/n_0_bpm_reg[1]_i_35
+    SLICE_X38Y71         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    88.867 r  u_bpm_calculator/bpm_reg[1]_i_30/CO[3]
+                         net (fo=1, routed)           0.000    88.867    u_bpm_calculator/n_0_bpm_reg[1]_i_30
+    SLICE_X38Y72         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    88.984 r  u_bpm_calculator/bpm_reg[1]_i_25/CO[3]
+                         net (fo=1, routed)           0.000    88.984    u_bpm_calculator/n_0_bpm_reg[1]_i_25
+    SLICE_X38Y73         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    89.101 r  u_bpm_calculator/bpm_reg[1]_i_20/CO[3]
+                         net (fo=1, routed)           0.000    89.101    u_bpm_calculator/n_0_bpm_reg[1]_i_20
+    SLICE_X38Y74         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    89.218 r  u_bpm_calculator/bpm_reg[1]_i_15/CO[3]
+                         net (fo=1, routed)           0.009    89.227    u_bpm_calculator/n_0_bpm_reg[1]_i_15
+    SLICE_X38Y75         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    89.344 r  u_bpm_calculator/bpm_reg[1]_i_10/CO[3]
+                         net (fo=1, routed)           0.000    89.344    u_bpm_calculator/n_0_bpm_reg[1]_i_10
+    SLICE_X38Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    89.461 r  u_bpm_calculator/bpm_reg[1]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    89.461    u_bpm_calculator/n_0_bpm_reg[1]_i_5
+    SLICE_X38Y77         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    89.578 r  u_bpm_calculator/bpm_reg[1]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    89.578    u_bpm_calculator/n_0_bpm_reg[1]_i_2
+    SLICE_X38Y78         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.179    89.757 r  u_bpm_calculator/bpm_reg[1]_i_1/CO[1]
+                         net (fo=37, routed)          0.841    90.598    u_bpm_calculator/p_1_in[1]
+    SLICE_X37Y75         LUT2 (Prop_lut2_I1_O)        0.332    90.930 r  u_bpm_calculator/bpm[0]_i_43/O
+                         net (fo=1, routed)           0.000    90.930    u_bpm_calculator/n_0_bpm[0]_i_43
+    SLICE_X37Y75         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532    91.462 r  u_bpm_calculator/bpm_reg[0]_i_34/CO[3]
+                         net (fo=1, routed)           0.000    91.462    u_bpm_calculator/n_0_bpm_reg[0]_i_34
+    SLICE_X37Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    91.576 r  u_bpm_calculator/bpm_reg[0]_i_29/CO[3]
+                         net (fo=1, routed)           0.000    91.576    u_bpm_calculator/n_0_bpm_reg[0]_i_29
+    SLICE_X37Y77         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    91.690 r  u_bpm_calculator/bpm_reg[0]_i_24/CO[3]
+                         net (fo=1, routed)           0.000    91.690    u_bpm_calculator/n_0_bpm_reg[0]_i_24
+    SLICE_X37Y78         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    91.804 r  u_bpm_calculator/bpm_reg[0]_i_19/CO[3]
+                         net (fo=1, routed)           0.000    91.804    u_bpm_calculator/n_0_bpm_reg[0]_i_19
+    SLICE_X37Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    91.918 r  u_bpm_calculator/bpm_reg[0]_i_14/CO[3]
+                         net (fo=1, routed)           0.000    91.918    u_bpm_calculator/n_0_bpm_reg[0]_i_14
+    SLICE_X37Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    92.032 r  u_bpm_calculator/bpm_reg[0]_i_9/CO[3]
+                         net (fo=1, routed)           0.000    92.032    u_bpm_calculator/n_0_bpm_reg[0]_i_9
+    SLICE_X37Y81         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    92.146 r  u_bpm_calculator/bpm_reg[0]_i_4/CO[3]
+                         net (fo=1, routed)           0.000    92.146    u_bpm_calculator/n_0_bpm_reg[0]_i_4
+    SLICE_X37Y82         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    92.260 r  u_bpm_calculator/bpm_reg[0]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    92.260    u_bpm_calculator/n_0_bpm_reg[0]_i_2
+    SLICE_X37Y83         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.268    92.528 r  u_bpm_calculator/bpm_reg[0]_i_1/CO[0]
+                         net (fo=1, routed)           0.000    92.528    u_bpm_calculator/p_1_in[0]
+    SLICE_X37Y83         FDCE                                         r  u_bpm_calculator/bpm_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    E3                                                0.000    10.000 r  clk
+                         net (fo=0)                   0.000    10.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.683    13.094    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.185 r  clk_IBUF_BUFG_inst/O
+                         net (fo=109, routed)         1.512    14.698    u_bpm_calculator/CLK
+    SLICE_X37Y83                                                      r  u_bpm_calculator/bpm_reg[0]/C
+                         clock pessimism              0.180    14.878    
+                         clock uncertainty           -0.035    14.842    
+    SLICE_X37Y83         FDCE (Setup_fdce_C_D)        0.046    14.888    u_bpm_calculator/bpm_reg[0]
+  -------------------------------------------------------------------
+                         required time                         14.888    
+                         arrival time                         -92.528    
+  -------------------------------------------------------------------
+                         slack                                -77.640    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.177ns  (arrival time - required time)
+  Source:                 u_bpm_calculator/counter_reg[19]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_bpm_calculator/beat_interval_reg[19]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.265ns  (logic 0.141ns (53.197%)  route 0.124ns (46.803%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.912ns
+    Source Clock Delay      (SCD):    1.406ns
+    Clock Pessimism Removal (CPR):    0.489ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.558     0.808    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.834 r  clk_IBUF_BUFG_inst/O
+                         net (fo=109, routed)         0.573     1.406    u_bpm_calculator/CLK
+    SLICE_X29Y51                                                      r  u_bpm_calculator/counter_reg[19]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X29Y51         FDCE (Prop_fdce_C_Q)         0.141     1.547 r  u_bpm_calculator/counter_reg[19]/Q
+                         net (fo=2, routed)           0.124     1.671    u_bpm_calculator/counter_reg[19]
+    SLICE_X28Y50         FDCE                                         r  u_bpm_calculator/beat_interval_reg[19]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.603     1.040    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.069 r  clk_IBUF_BUFG_inst/O
+                         net (fo=109, routed)         0.843     1.912    u_bpm_calculator/CLK
+    SLICE_X28Y50                                                      r  u_bpm_calculator/beat_interval_reg[19]/C
+                         clock pessimism             -0.489     1.422    
+    SLICE_X28Y50         FDCE (Hold_fdce_C_D)         0.072     1.494    u_bpm_calculator/beat_interval_reg[19]
+  -------------------------------------------------------------------
+                         required time                         -1.494    
+                         arrival time                           1.671    
+  -------------------------------------------------------------------
+                         slack                                  0.177    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         sys_clk_pin
+Waveform:           { 0 5 }
+Period:             10.000
+Sources:            { clk }
+
+Check Type        Corner  Lib Pin  Reference Pin  Required  Actual  Slack  Location        Pin
+Min Period        n/a     BUFG/I   n/a            2.155     10.000  7.845  BUFGCTRL_X0Y16  clk_IBUF_BUFG_inst/I
+Low Pulse Width   Slow    FDCE/C   n/a            0.500     5.000   4.500  SLICE_X0Y158    u_adc_interface/adc_data_out_reg[11]/C
+High Pulse Width  Slow    FDCE/C   n/a            0.500     5.000   4.500  SLICE_X29Y45    u_bpm_calculator/beat_interval_reg[0]/C
+
+
+

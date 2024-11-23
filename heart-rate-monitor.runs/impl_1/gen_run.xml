@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1732399022">
+  <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/impl_1/constrs_in.xml"/>
+  <File Type="PWROPT-DCP" Name="heart_rate_monitor_pwropt.dcp"/>
+  <File Type="RUN-STRAT" Name="$PDATADIR/runs/impl_1/impl_1.psg"/>
+  <File Type="OPT-DRC" Name="heart_rate_monitor_drc_opted.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="heart_rate_monitor_timing_summary_routed.pb"/>
+  <File Type="PA-TCL" Name="heart_rate_monitor.tcl"/>
+  <File Type="OPT-DCP" Name="heart_rate_monitor_opt.dcp"/>
+  <File Type="PWROPT-DRC" Name="heart_rate_monitor_drc_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="heart_rate_monitor_placed.dcp"/>
+  <File Type="PLACE-IO" Name="heart_rate_monitor_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="heart_rate_monitor_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="heart_rate_monitor_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="heart_rate_monitor_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="heart_rate_monitor_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="heart_rate_monitor_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="heart_rate_monitor_incremental_reuse_pre_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="heart_rate_monitor_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="heart_rate_monitor_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="heart_rate_monitor_drc_physopted.rpt"/>
+  <File Type="ROUTE-DCP" Name="heart_rate_monitor_routed.dcp"/>
+  <File Type="ROUTE-DRC" Name="heart_rate_monitor_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="heart_rate_monitor_drc_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="heart_rate_monitor_power_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="heart_rate_monitor_power_summary_routed.pb"/>
+  <File Type="ROUTE-STATUS" Name="heart_rate_monitor_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="heart_rate_monitor_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="heart_rate_monitor_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="heart_rate_monitor_incremental_reuse_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="heart_rate_monitor_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="heart_rate_monitor_timing_summary_postroute_physopted.rpt"/>
+  <File Type="RDI-RDI" Name="heart_rate_monitor.vdi"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="heart_rate_monitor_timing_summary_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="heart_rate_monitor.bit"/>
+  <File Type="BG-BIN" Name="heart_rate_monitor.bin"/>
+  <File Type="BITSTR-MSK" Name="heart_rate_monitor.msk"/>
+  <File Type="BITSTR-RBT" Name="heart_rate_monitor.rbt"/>
+  <File Type="BITSTR-NKY" Name="heart_rate_monitor.nky"/>
+  <File Type="BITSTR-BMM" Name="heart_rate_monitor_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="heart_rate_monitor.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="heart_rate_monitor.sysdef"/>
+  <File Type="BG-BGN" Name="heart_rate_monitor.bgn"/>
+  <File Type="BG-DRC" Name="heart_rate_monitor.drc"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/heart_rate_monitor.xdc">
+      <FileInfo>
+        <Attr Name="Library" Val="xil_defaultlib"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>
